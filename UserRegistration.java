@@ -8,6 +8,7 @@ public class UserRegistration {
 	public static void main(String[] args) {
 		System.out.println("Welcome to USER REGISTRATION PROBLEM");
 		Scanner s = new Scanner(System.in);
+		
 		//validating first name
         System.out.println("Enter First Name: ");
         String firstName = s.next();
@@ -40,6 +41,17 @@ public class UserRegistration {
         	System.out.println("Email is valid");
         else
         	System.out.println("Email is not valid");
+        
+        //validate mobile format
+        System.out.println("Enter mobile number : ");
+        String Mobile = s.next();
+        pattern = Pattern.compile("(?!:\\A|\\s)(?!(\\d{1,6}\\s+\\D)|((\\d{1,2}\\s+){2,2}))(((\\+\\d{1,3})|(\\(\\+\\d{1,3}\\)))\\s*)?((\\d{1,6})|(\\(\\d{1,6}\\)))\\/?(([ -.]?)\\d{1,5}){1,5}((\\s*(#|x|(ext))\\.?\\s*)\\d{1,5})?(?!:(\\Z|\\w|\\b\\s))",Pattern.CASE_INSENSITIVE);
+        matcher = pattern.matcher(Mobile);
+        result = matcher.matches();
+        if(result == true)
+        	System.out.println("Mobile number is valid");
+        else
+        	System.out.println("Mobile number is not valid");
         
         
 	}
