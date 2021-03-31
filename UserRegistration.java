@@ -42,6 +42,19 @@ public class UserRegistration {
         else
         	System.out.println("Email is not valid");
         
+        //validating password
+        //Rule one minimum 8 characters
+        System.out.println("Enter Password: ");
+        String password = s.next();
+        pattern = Pattern.compile("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\\W]).{8,64})",Pattern.CASE_INSENSITIVE);
+        matcher = pattern.matcher(password);
+        result = matcher.matches();
+        if(result == true)
+        	System.out.println("Password is valid");
+        else
+        	System.out.println("Password is invalid");
+        
+        
         //validate mobile format
         System.out.println("Enter mobile number : ");
         String Mobile = s.next();
